@@ -20,13 +20,29 @@ int main()
 	int i;
 	for (i = 0; i < MAX_CARS; i++)
 	{
-		cout << "\nEnter the details for Car " << i +1;
+		cout << "\nEnter the details for Car " << i + 1;
 		cout << "\nCar Number:";
 		cin.getline(carData[i].carNumber, 20);
-		cout << "Enter the miles driven by car " << i +1<<":";
-		cin >> carData[i].milesDriven;
-		cout << "Enter the gallons used by car " << i+1<<":";
-		cin >> carData[i].gallonsUsed;
+		cout << "Enter the miles driven:";
+		do
+		{
+			cin >> carData[i].milesDriven;
+			while (carData[i].milesDriven < 0.0)
+			{
+				cout << "Incorrect data. Please enter the miles driven by car " << i + 1 << ":";
+				cin >> carData[i].milesDriven;
+			}
+		} while (carData[i].milesDriven < 0.0);
+		cout << "Enter the gallons used:";
+		do
+		{
+			cin >> carData[i].gallonsUsed;
+			while (carData[i].gallonsUsed < 0)
+			{
+				cout << "Incorrect data. Please enter the gallons used by car " << i + 1 << ":";
+				cin >> carData[i].gallonsUsed;
+			}
+		} while (carData[i].gallonsUsed < 0);
 		cin.ignore();
 	}
 	
