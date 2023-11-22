@@ -16,7 +16,8 @@ struct Car
 int main()
 {
 	Car carData[5];
-	for (int i = 0; i < 5; i++)
+	int i;
+	for (i = 0; i < 5; i++)
 	{
 		cout << "\nEnter the details for Car " << i +1;
 		cout << "\nCar Number:";
@@ -27,5 +28,12 @@ int main()
 		cin >> carData[i].gallonsUsed;
 		cin.ignore();
 	}
-	for(int j = 0;j<5)
+	
+	cout << "Cars Report";
+	cout << "\nCar Number" << "\tMiles/Gallon";
+	for (int j = 0; j < 5; j++)
+	{
+		double milesPerGallon = carData[j].milesDriven / carData[j].gallonsUsed;
+		cout <<"\n"<< carData[j].carNumber<<"\t\t"<< milesPerGallon;
+	}
 }
