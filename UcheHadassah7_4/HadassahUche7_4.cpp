@@ -15,9 +15,10 @@ struct Car
 };
 int main()
 {
-	Car carData[5];
+	const int MAX_CARS = 5;
+	Car carData[MAX_CARS];
 	int i;
-	for (i = 0; i < 5; i++)
+	for (i = 0; i < MAX_CARS; i++)
 	{
 		cout << "\nEnter the details for Car " << i +1;
 		cout << "\nCar Number:";
@@ -30,8 +31,8 @@ int main()
 	}
 	
 	cout << "Cars Report";
-	cout << "\nCar Number" << "\tMiles/Gallon";
-	for (int j = 0; j < 5; j++)
+	cout << "\nCar Number\tMiles/Gallon";
+	for (int j = 0; j < MAX_CARS; j++)
 	{
 		double milesPerGallon = carData[j].milesDriven / carData[j].gallonsUsed;
 		cout <<"\n"<< carData[j].carNumber<<"\t\t"<< milesPerGallon;
