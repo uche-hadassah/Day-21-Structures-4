@@ -7,6 +7,7 @@ the car.*/
 #include<iostream>
 #include<cstring>
 using namespace std;
+const int MAX = 5;
 struct Car
 {
 	char carNumber[20];
@@ -15,5 +16,25 @@ struct Car
 };
 int main()
 {
-	cout << "Hello World";
+	Car carData[MAX];
+	int i;
+	for (i = 0; i < MAX; i++)
+	{
+		cout << "\nEnter the details for Car " << i + 1;
+		cout << "\nCar Number:";
+		cin.getline(carData[i].carNumber, 20);
+		cout << "Enter the miles driven by car " << i + 1 << ":";
+		cin >> carData[i].milesDriven;
+		cout << "Enter the gallons used by car " << i + 1 << ":";
+		cin >> carData[i].gallonsUsed;
+		cin.ignore();
+	}
+
+	cout << "Cars Report";
+	cout << "\nCar Number\tMiles/Gallon";
+	for (int j = 0; j < MAX; j++)
+	{
+		double milesPerGallon = carData[j].milesDriven / carData[j].gallonsUsed;
+		cout << "\n" << carData[j].carNumber << "\t\t" << milesPerGallon;
+	}
 }
