@@ -19,22 +19,11 @@ int main()
 	{
 		cout << "\nEnter the details for Car " << i + 1;
 		cout << "\nCar Number:";
-		//Gets the car number from the user
-		int length;
-		do
-		{
-			cin.getline(carData[i].carNumber, 20);
-			length = strlen(carData[i].carNumber);
-			while(carData[i].carNumber[length] != '\0')
-			{
-				cout << "Invalid car Number. Please enter the car number:";
-				cin.getline(carData[i].carNumber, 20);
-			}
-		} while (carData[i].carNumber[length] != '\0');
+		cin.getline(carData[i].carNumber, 20);//Gets the car number from the user
 		cout << "Enter the miles driven by car " << i + 1 << ":";
 		do
 		{
-			cin >> carData[i].milesDriven;
+			cin >> carData[i].milesDriven;//Gets the miles driven from the user
 			while (carData[i].milesDriven < 0.0)
 			{
 				cout << "Incorrect data. Please enter the miles driven by car " << i + 1 << ":";
@@ -44,7 +33,7 @@ int main()
 		cout << "Enter the gallons used:";
 		do
 		{
-			cin >> carData[i].gallonsUsed;
+			cin >> carData[i].gallonsUsed;//Gets the gallons used from the user
 			while (carData[i].gallonsUsed < 0)
 			{
 				cout << "Incorrect data. Please enter the gallons used by car " << i + 1 << ":";
